@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Discussion</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/discussion.css' %}"
+    />
+  </head>
+  <body>
+    <div class="header">New Discussion</div>
+    <div class="card">
+      <form method="POST">
+        {% csrf_token %} 
+        {% for field in form %}
+        <div class="label">{{field.label}}</div>
+        <div class="field">{{field}}</div>
+        {% endfor %}
+        <button type="submit" class="submit">Add</button>
+      </form>
+    </div>
+  </body>
+</html>

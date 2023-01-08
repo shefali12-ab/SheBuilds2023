@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/login.css' %}"
+    />
+  </head>
+  <body>
+    <div class="login_box">
+      <div class="left">
+        <div class="contact">
+          <form method="POST">
+            {% csrf_token %}
+            <h1>REGISTER</h1>
+            <div class="errors">
+            {{form.errors.as_text}} 
+            </div>
+            {{form.username}} {{form.password1}} {{form.password2}}
+            <button class="submit">REGISTER</button>
+            <h5>
+              Already have an account?
+              <a href="{% url 'login' %}">Log In</a>
+            </h5>
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        {% comment %}
+        <div class="right-text">
+          <h2>LONYX</h2>
+          <h5>A UX BASED CREATIVE AGENCEY</h5>
+        </div>
+        {% endcomment %}
+      </div>
+    </div>
+    <script>
+      //Query All input fields
+      var form_fields = document.getElementsByTagName('input')
+      form_fields[1].placeholder = 'USERNAME';
+      form_fields[2].placeholder = 'PASSWORD';
+      form_fields[3].placeholder = 'CONFIRM PASSWORD';
+  
+      for (var field in form_fields) {
+        form_fields[field].className += ' form-control'
+      }
+    </script>
+  </body>
+</html>

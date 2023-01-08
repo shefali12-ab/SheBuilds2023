@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnosis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/quiz.css' %}" />
+  </head>
+  <body>
+    <div class="header">Diagnosis for Postpartum Depression</div>
+    <div class="container">
+      <div class="warning">
+        <b>WARNING</b>: This is not an official diagnosis. It is just a helpful tool to understand yourself better.
+      </div>
+      <form method="POST">
+        {% csrf_token %} {% for q in questions %}
+        <div class="card">
+          <div class="question">
+            <div class="number">{{q.qno}}</div>
+            {{q.question}}
+          </div>
+          <div class="options">
+            <input
+              type="radio"
+              name="{{q.question}}"
+              id="{{q.question}}1"
+              value="option1"
+              checked
+              required
+            />
+            <label class="box" for="{{q.question}}1"> {{q.op1}} </label>
+              <input
+                type="radio"
+                name="{{q.question}}"
+                id="{{q.question}}2"
+                value="option2"
+              />
+              <label class="box" for="{{q.question}}2"> {{q.op2}} </label>
+              <input
+                type="radio"
+                name="{{q.question}}"
+                id="{{q.question}}3"
+                value="option3"
+              />
+              <label class="box for="{{q.question}}3"> {{q.op3}} </label>
+          </div>
+        </div>
+        {% endfor %}
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

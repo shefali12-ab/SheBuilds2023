@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/login.css' %}"
+    />
+  </head>
+  <body>
+    <div class="login_box">
+      <div class="left">
+        <div class="contact">
+          <form method="POST">
+            {% csrf_token %}
+            <h1>LOG IN</h1>
+            <input
+              type="text"
+              name="username"
+              placeholder="USERNAME"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="PASSWORD"
+              required
+            />
+            <button class="submit">LOG IN</button>
+            <h5>
+                Don't have an account? 
+                <a href="{% url 'register' %}">Register</a>
+            </h5>
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        {% comment %}
+        <div class="right-text">
+          <h2>LONYX</h2>
+          <h5>A UX BASED CREATIVE AGENCEY</h5>
+        </div>
+        {% endcomment %}
+      </div>
+    </div>
+  </body>
+</html>

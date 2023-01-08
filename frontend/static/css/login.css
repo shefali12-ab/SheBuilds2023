@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600&display=swap");
+
+body {
+  background: linear-gradient(45deg, #f9f5f5, #eee1e1);
+}
+img {
+  width: 100%;
+  object-fit: scale-down;
+}
+.login_box {
+  width: 700px;
+  height: 420px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 4px 22px -8px #0004;
+  display: flex;
+  overflow: hidden;
+}
+.login_box .left {
+  width: 41%;
+  height: 100%;
+  padding: 10px 10px;
+}
+.login_box .right {
+  width: 59%;
+  height: 100%;
+}
+
+.left .contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 85%;
+  margin: auto;
+  font-family: Lato;
+}
+
+.left h1 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-family: Crimson Text;
+}
+.left input {
+  border: none;
+  width: 80%;
+  margin: 10px 0px;
+  border-bottom: 1px solid #4f30677d;
+  padding: 7px 9px;
+  overflow: hidden;
+  background: transparent;
+  font-weight: 600;
+  font-size: 14px;
+}
+.left {
+  background: #eee1e1;
+}
+.submit {
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  background: #F283B6;
+  color: #fff;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+  -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+  box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+}
+
+.left h5 {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  color: #000;
+  font-size: 2;
+  text-align: center;
+}
+
+.errors {
+  display: block;
+  margin: auto;
+  margin-top: 3px;
+  color: gray;
+  font-size: 4;
+  text-align: center;
+}
+
+h5 a {
+  text-decoration: none;
+  color: #F283B6;
+}
+h5 a:visited {
+  text-decoration: none;
+  color: #F283B6;
+}
+
+.right {
+  background: url(https://img.freepik.com/free-vector/gynecology-concept-illustration_23-2148653934.jpg?w=740&t=st=1672941023~exp=1672941623~hmac=6ce063d0a4353146f1f7785cf9878e9ae636d0a2a886f09d4276db8cc72a8cda);
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}

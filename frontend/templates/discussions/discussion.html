@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{discussion.title}}</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/discussion.css' %}"
+    />
+  </head>
+  <body>
+    <div class="header">View Discussion</div>
+    <button type="button" class="submit">
+      <a href="{% url 'add_discussion' %}">
+        Add</button>
+      </a>
+    {% for post in discussion%}
+    <div class="post">
+      <b>{{post.user}}</b>
+      <a href="{% url 'view_discussion' post.id %}">
+        <h2>{{post.title}}</h2>
+      </a>
+      <div>
+        <div class="topic">Topic: {{post.topic}}</div>
+        <div class="topic">Time: {{post.date_created}}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
